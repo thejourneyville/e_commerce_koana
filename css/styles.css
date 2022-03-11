@@ -5,3 +5,14 @@ body {
 .navbar .nav-link {
     font-size: .75em;
 }
+
+.custom-toggler {
+    border: none;
+  }
+
+  .text-toggle[aria-expanded=false] .text-expanded {
+    display: none;
+  }
+  .text-toggle[aria-expanded=true] .text-collapsed {
+    display: none;
+  }
