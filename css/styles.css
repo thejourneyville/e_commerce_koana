@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background: rgb(167, 167, 167);
 }
 
 .navbar .nav-link {
@@ -8,11 +8,70 @@ body {
 
 .custom-toggler {
     border: none;
-  }
+}
 
-  .text-toggle[aria-expanded=false] .text-expanded {
+.text-toggle[aria-expanded=false] .text-expanded {
     display: none;
-  }
-  .text-toggle[aria-expanded=true] .text-collapsed {
+}
+.text-toggle[aria-expanded=true] .text-collapsed {
     display: none;
-  }
+}
+
+.push-down {
+    margin-top: 3em;
+}
+
+.card-background-yellow {
+      background: hsl(0, 0%, 51%);
+      background-image: linear-gradient(hsl(46, 100%, 64%),hsl(0, 92%, 77%));
+}
+
+.card-background-green {
+    background: hsl(0, 0%, 51%);
+    background-image: linear-gradient(hsl(275, 100%, 66%),hsl(194, 100%, 78%));
+}
+
+.card-style {
+    border-radius: 0;
+    padding: none;
+    
+}
+
+.divider {
+    border-bottom: 1em solid rgb(255, 255, 255);
+}
+
+.card {
+    border:none;
+}
+
+.card-body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.card-title {
+    padding: 2em 1em 0em 1em;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.card-desc {
+    padding: 0 5em;
+}
+
+.card-buttons {
+    margin: 5px 20px 20px 20px;
+    border: none;
+}
+
+.btn-outline-dark:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* .card-img {
+    padding: 0;
+    width: 100%;
+} */
+
