@@ -8,30 +8,30 @@
         <!-- Bootstrap 5 stylesheet -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="css/styles.css"
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     
     <body>
         <header>
-            <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: rgb(255, 253, 184);">
+            <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="topNav" style="background-color: rgb(255, 253, 184);">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">k o a n a</a>
-                    <button class="navbar-toggler custom-toggler  shadow-none text-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-expanded="false">
+                    <a class="navbar-brand" href="index.html">k o a n a</a>
+                    <button class="navbar-toggler custom-toggler shadow-none text-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-expanded="false">
                         <span><i class="text-collapsed bi-caret-right"></i></span>
                         <span><i class="text-expanded bi-caret-down"></i></span>
                     </button>
                     <div class="collapse navbar-collapse d-flex-sm justify-content-end" id="mainNavbar">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">Store</a></li>
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item"><a class="nav-link " href="#">Store</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Cafe</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><i class="text-expanded bi-cart" style="font-size:1em;"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="text-expanded bi-cart" style="font-size:2em;"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
+            
             <div class="push-down"></div>
 
         </header>
@@ -71,26 +71,53 @@
         </body>
 
         <footer>
-            <nav class="navbar navbar-expand-sm navbar-light" style="background-color: rgb(255, 253, 184);">
+            <div class="navbar navbar-expand navbar-light" style="background-color: rgb(255, 253, 184);">
                 <div class="container-fluid">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">Store</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Cafe</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                            <li class="nav-item"><a class="nav-link"  style="color:rgb(194, 176, 115)" href="#">Copyright 2022 Koana. All rights reserved.</a></li>
                         </ul>
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">Copyright 2022 Koana. All right reserved</a></li>
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">meta</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">instagram</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="text-expanded bi-envelope-heart" style="font-size:2em;"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="text-expanded bi-meta" style="font-size:2em;"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="text-expanded bi-instagram" style="font-size:2em;"></i></a></li>
                         </ul>
                 </div>
-            </nav>
+            </div>
         </footer>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+
+        </script>
+        
+        <script>
+            // const nightcoderOffClicker = document.querySelector('.navbar-collapse');
+            // addEventListener('click', function(e) {
+
+            //     if (e.target === "topNav".target) {
+            //         return
+            //     }
+            //     if (nightcoderOffClicker.classList.contains("show")) {
+            //     nightcoderOffClicker.classList.remove("show");
+            //     }
+            // });
+            
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            document.addEventListener("click", closeMenu, false);
+
+            function closeMenu(e) {
+                if (e.target !== e.currentTarget) {
+                    if ( e.target.offsetParent?.tagName === "NAV"){
+                        return;
+                    }
+                    if (navbarCollapse.classList.contains("show")) {
+                        navbarCollapse.classList.remove("show");
+                    }
+                };
+                e.stopPropagation();
+            };
+
+
+        </script>
     </body>
 </html>
