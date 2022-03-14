@@ -2,6 +2,29 @@ body {
     background: rgb(167, 167, 167);
 }
 
+@media (min-width: 544px) {
+    #title-responsive {font-size:3rem;} /*1rem = 16px*/
+    #text-responsive {font-size:1rem;} /*1rem = 16px*/
+}
+   
+  /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+  @media (min-width: 768px) {  
+    #title-responsive {font-size:3.5rem;} /*1rem = 16px*/
+    #text-responsive {font-size:1.25rem;} /*1rem = 16px*/
+  }
+   
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    #title-responsive {font-size:4rem;} /*1rem = 16px*/
+    #text-responsive {font-size:1.5rem;} /*1rem = 16px*/
+  }
+   
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {  
+    #title-responsive {font-size:5rem;} /*1rem = 16px*/    
+    #text-responsive {font-size:1.75rem;} /*1rem = 16px*/    
+  }
+
 .navbar .nav-link {
     font-size: .75em;
 }
@@ -23,7 +46,7 @@ body {
 
 .card-background-yellow {
       background: hsl(0, 0%, 51%);
-      background-image: linear-gradient(hsl(0, 0%, 85%),hsl(36, 98%, 50%));
+      background-image: radial-gradient(hsl(36, 100%, 68%),hsl(0, 0%, 85%));
 }
 
 .card-background-green {
@@ -38,7 +61,7 @@ body {
 }
 
 .divider {
-    border-bottom: 1em solid rgb(255, 255, 255);
+    border-bottom: .75em solid rgb(253, 254, 255);
 }
 
 .card {
@@ -68,6 +91,7 @@ body {
 
 .btn-outline-dark:hover {
     background-color: rgba(0, 0, 0, 0);
+    color:yellow;
 }
 
 /* .card-img {
