@@ -63,8 +63,7 @@
         
         <script>
             const menuToggle = document.getElementById("mainNavbar");
-            const navbar = document.querySelector(".navbar-collapse");
-        
+            
             document.addEventListener("click", function (e) {
                 if (!menuToggle.classList.contains("show")) return;
                 if (e.target.offsetParent?.tagName === "NAV") return;
