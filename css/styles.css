@@ -1,5 +1,5 @@
 body {
-    background: rgb(167, 167, 167);
+    background: rgb(255, 255, 255);
 }
 
 @media (min-width: 544px) {
@@ -94,8 +94,7 @@ body {
     color:yellow;
 }
 
-/* .card-img {
-    padding: 0;
-    width: 100%;
-} */
+.img-fluid {
+    max-width: 50%;
+}
 
