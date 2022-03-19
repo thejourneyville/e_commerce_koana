@@ -15,14 +15,14 @@
     <body>
         <header>
             <!-- start of sub menu -->
-            <nav class="navbar navbar-expand-sm subNavbar fixed-top" style="background-color: rgb(41, 41, 41); margin-top:3em;">
+            <nav class="navbar navbar-expand-sm subNavbar fixed-top" style="background-color: rgb(0, 34, 85); margin-top:3em;">
                 <div class="container-fluid d-flex-xs ps-2 pt-2">
                     <button class="navbar-toggler custom-toggler shadow-none text-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#subNavbar" aria-expanded="false">
                         <span style="color:rgb(255, 255, 255)"><i class="text-collapsed bi-caret-right"></i></span>
                         <span style="color:rgb(255, 255, 255)"><i class="text-expanded bi-caret-down"></i></span>
                     </button>
                     <div class="collapse navbar-collapse d-flex-sm pt-sm-1 justify-content-start" id="subNavbar">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav" style="padding-left: .4em; padding-bottom: .1em;  line-height: 2.2em;">
                             <li class="nav-item pt-sm-2"><a class="subNav-link" id="coffeeButton" href="javascript:void(0);">Coffee</a></li>
                             <li class="nav-item pt-sm-2"><a class="subNav-link"  id="teaButton" href="javascript:void(0);">Tea</a></li>
                             <li class="nav-item pt-sm-2"><a class="subNav-link"  id="foodButton" href="javascript:void(0);">Food Items</a></li>
@@ -56,7 +56,27 @@
             
             <div class="push-down"></div>
         </header>
+        <!-- Button trigger modal -->
 
+  
+  <!-- Modal example-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add to Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
         
         <main class="container-fluid" style="margin-bottom: 50px;">
             
@@ -74,7 +94,10 @@
                                     <div style="border-bottom:1px ridge rgb(216, 216, 216);" style="background: rgb(0, 166, 255)"></div>
                                     <div class="col pt-1" style="font-size:.75em">$30 / 7oz.</div>
                                     <div class="col text-end">
-                                        <button class="btn  p-0" href="#"><i class="text-expanded bi-cart" style="font-size:1em;"></i></button>
+                                        <!-- ADD TO CART WITH MODAL -->
+                                        <button type="button" class="btn shadow-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="text-expanded bi-cart" style="font-size:1em;"></i>
+                                          </button>
                                     </div>
                                 </div>
                             </div>
@@ -384,17 +407,27 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
         
-        <!-- NAVBAR and SUBNAVBAR -->
+
         <script>
-            const menuToggle = document.getElementById("mainNavbar");
+            // NAVBAR and SUBNAVBAR arrow toggler
+
+            // initializing variable menuToggle with the ID mainNavBar from the DIV with the collapse class
+            const menuToggle = document.getElementById("mainNavbar"); 
             const subMenuToggle = document.getElementById("subNavbar");
             
-            
+            // listening for a click anywhere in the document and then calling a function with the event as its parameter
             document.addEventListener("click", function (e) {
+                // if there's NOT a class called "show" within the classlist of menuToggle, exit the function (return)
+                // Bootstrap adds the class "show" to the expanded navbar menu and removes it when it's collapsed
+                // meaning if the menu is collapsed, exit out of this function otherwise continue
                 if (!menuToggle.classList.contains("show")) return;
+                // this will check all ancestors from the origin of the clicked event, and if the ancester tag name "NAV" exists exit out of function
+                // meaning if we click anywhere in the expanded menu (and it would be from the previous condition) exit out 
+                // without collapsing the menu. Basically the menu won't close if we click within it without selecting an option
                 if (e.target.offsetParent?.tagName === "NAV") return;
+                // bootstrap creates an instance of class which has a method to toggle the visibility of the menu
                 new bootstrap.Collapse(menuToggle);
-
+                // this method prevents further action of the event, improving performance
                 e.stopPropagation();
             });
             
@@ -405,24 +438,30 @@
 
                 e.stopPropagation();
             });
-        </script>
+   
+            // menu item toggler
 
-        <script>
+            // four IDs for the four menu categories
             const coffeeMenu = document.querySelector("#coffee")
             const teaMenu = document.querySelector("#tea")
             const foodMenu = document.querySelector("#food")
             const merchMenu = document.querySelector("#merch")
 
             document.addEventListener('click', function(e) {
+                // the entire document is the current target, so if the target clicked on is not the entire document
                 if (e.target !== e.currentTarget) {
+                    // assign the ID of the target to the variable menuButton
                     let menuButton = e.target.id;
+                    // this will collapse the submenu if previously initialized subMenuToggle contains the class 'show' because the
+                    // menu is expanded, at this point, collapsing the menu is needed as the user has clicked an option on the menu
                     if (subMenuToggle.classList.contains("show")) new bootstrap.Collapse(subMenuToggle);
+                    // now there's many conditons which will hide or unhide DIVs depending on what menu option was chosen
                     if (menuButton === "coffeeButton") {
-
+                        // if coffee is clicked, and it is currently hidden, remove the class d-none to unhide it
                         if (coffeeMenu.classList.contains("d-none")) {
                             coffeeMenu.classList.remove("d-none");
                         };
-
+                        // if all the other menu options do NOT contain d-none, add the class so only coffee remains visible
                         if (!teaMenu.classList.contains("d-none")) {
                             teaMenu.classList.add("d-none");
                         }
