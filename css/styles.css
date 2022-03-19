@@ -45,7 +45,17 @@ body {
 }
 
 .subnavBar {
-    height: 3em;
+    height: 2.75em;
+}
+
+.subNav-link {
+    font-size: .75em;
+    color:white;
+    text-decoration: none;
+    padding-right: 1.5em;
+}
+.subNav-link:hover {
+    color:rgb(180, 229, 255);
 }
 
 .card-background-yellow {
