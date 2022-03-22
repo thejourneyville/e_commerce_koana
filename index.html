@@ -8,6 +8,12 @@
         <!-- Bootstrap 5 stylesheet -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="css/styles.css">
     </head>
@@ -16,7 +22,7 @@
         <header>
             <nav class="navbar navbar-expand-sm navbar-light fixed-top" id="topNav" style="background-color: rgb(255, 253, 184);">
                 <div class="container-fluid">
-                    <a class="navbar-brand font-weight-bold" style="color:rgb(74, 170, 222); letter-spacing: .5em;" href="index.html">Koana</a>
+                    <a class="navbar-brand " style="color:rgb(74, 170, 222); font-size: 20px; font-family:'BasementGrotesque-Black', sans-serif;" href="index.html">Koana</a>
                     <button class="navbar-toggler custom-toggler shadow-none text-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-expanded="false">
                         <span style="color:rgb(74, 170, 222)"><i class="text-collapsed bi-cart" style="font-size:1em;"></i></span>
                         <span style="color:rgb(74, 170, 222)"><i class="text-collapsed bi-caret-right"></i></span>
@@ -95,6 +101,7 @@
             
             document.addEventListener("click", function (e) {
                 if (!menuToggle.classList.contains("show")) return;
+                // ? - optional chaining which returns 'undefined' instead of throwing error
                 if (e.target.offsetParent?.tagName === "NAV") return;
                 new bootstrap.Collapse(menuToggle);
 

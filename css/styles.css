@@ -1,10 +1,14 @@
 body {
     background: rgb(255, 255, 255);
 }
+@media (min-width: 0px) {
+    #title-responsive {font-size:3rem;} /*1rem = 16px*/
+    #text-responsive {font-size:1.2rem;} /*1rem = 16px*/
+}
 
 @media (min-width: 544px) {
-    #title-responsive {font-size:3rem;} /*1rem = 16px*/
-    #text-responsive {font-size:1rem;} /*1rem = 16px*/
+    #title-responsive {font-size:3.2rem;} /*1rem = 16px*/
+    #text-responsive {font-size:1.3rem;} /*1rem = 16px*/
 }
    
   /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
@@ -90,17 +94,25 @@ body {
 .card-title {
     padding: 2em 1em 0em 1em;
     font-size: 3em;
-    font-weight: 700;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 900;
     line-height: 1;
 }
 
 .card-desc {
     padding: 0 5em;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 400;
 }
 
 .card-buttons {
     margin: 5px 20px 20px 20px;
     border: none;
+}
+
+.btn {
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 400;
 }
 
 .btn-outline-dark:hover {
